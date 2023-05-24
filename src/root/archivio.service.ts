@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ajax, AjaxResponse } from 'rxjs/ajax';
 
-@Injectable()
+@Injectable({
+  providedIn: 'any'
+})
+
 export class ArchivioService {
 
   key: string = 'key=cfb29652';
@@ -15,6 +18,18 @@ export class ArchivioService {
       method: 'GET',
       url: this.indirizzoGet,
       crossDomain: true
+    });
+  }
+  public setArchivio(archivio: Array<object>): Observable<AjaxResponse<any>> {
+    const strarchivio = JSON.stringify(archivio);
+    return ajax({
+      method: 'POST',
+      url: this.indirizzoSet,
+      crossDomain: true,
+      headers: {
+        'Content-Type': 'application/json' 
+      },
+      body: strarchivio
     });
   }
 }

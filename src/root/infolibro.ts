@@ -1,4 +1,4 @@
-export class infolibri {
+export class infolibro {
   titolo: string;
   autore: string;
   posizione: string;
