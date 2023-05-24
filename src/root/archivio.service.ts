@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ajax, AjaxResponse } from 'rxjs/ajax';
 
 @Injectable()
 export class ArchivioService {
@@ -9,7 +10,11 @@ export class ArchivioService {
   indirizzoSet: string = 'https://eu-central-1.aws.data.mongodb-api.com/app/kvaas-giwjg/endpoint/set?' + this.key;
 
   constructor() { }
-  public getArchivio(): Observable<Object> {
-    
+  public getArchivio(): Observable<AjaxResponse<any>> {
+    return ajax({
+      method: 'GET',
+      url: this.indirizzoGet,
+      crossDomain: true
+    });
   }
 }
