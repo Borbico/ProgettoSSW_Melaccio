@@ -1,3 +1,16 @@
-<p>
-acquisizione works!
-</p>
+<button *ngIf="acquisizione == undefined" (click)="setAcquisizione()">Nuova acquisizione</button>
+<div *ngIf="acquisizione == 1">
+  <h1>Acquisizione di un nuovo volume in archivio</h1>
+  <div>
+    <label for="titolo">Titolo: </label>
+    <input type="text" id="titolo"/><br />
+    <label for="autore">Autore: </label>
+    <input type="text" id="autore"/><br />
+    <label for="posizione" id="posizione">Posizione: </label>
+    <input type="text" id="posizione"/><br />
+    <label for="prestatario">Nominativo del prestatario: </label>
+    <input type="text" id="prestatario"/><br />
+  </div>
+  <button (click)="nuovaAcquisizione()">Acquisisci libro</button><br />
+  <button (click)="clean()">Esci</button>
+</div>
