@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AjaxResponse } from 'rxjs/ajax';
 import { RicercaComponent } from './ricerca/ricerca.component';
 import { AcquisizioneComponent } from './acquisizione/acquisizione.component';
 import { Archivio } from './archivio';
 import { ArchivioService } from './archivio.service';
-import { CommonModule } from '@angular/common';
-import { AjaxResponse } from 'rxjs/ajax';
 
 
 @Component({
