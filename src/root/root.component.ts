@@ -5,6 +5,7 @@ import { RicercaComponent } from './ricerca/ricerca.component';
 import { AcquisizioneComponent } from './acquisizione/acquisizione.component';
 import { Archivio } from './archivio';
 import { ArchivioService } from './archivio.service';
+import { infolibro } from './infolibro';
 
 
 @Component({

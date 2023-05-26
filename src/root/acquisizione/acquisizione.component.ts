@@ -13,13 +13,23 @@ import { ArchivioService } from '../archivio.service';
   imports: [CommonModule],
 })
 export class AcquisizioneComponent implements OnInit {
-  @Input() acquisizione: number;
-  @Input() archivioAttuale: Archivio;
+  @Input() acquisizione!: number;
+  @Input() archivioAttuale = new Archivio(this.ar);
   @Output() resetAcquisizione = new EventEmitter<number>();
 
   setAcquisizione(valore: number) {
     this.acquisizione = valore;
     this.resetAcquisizione.emit(this.acquisizione);
+  }
+
+  costruisciArchivio() {
+    this.ar.getArchivio().subscribe({
+      next: (data: AjaxResponse<any>) => console.log(data.response),
+      error: (e) =>
+        console.error(
+          "Errore di acquisizione dell'archivio: " + JSON.stringify(e)
+        ),
+    });
   }
 
   acquisisciLibro() {
