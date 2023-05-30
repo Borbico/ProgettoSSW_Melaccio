@@ -13,7 +13,7 @@ import { ArchivioService } from '../archivio.service';
   imports: [CommonModule],
 })
 export class RicercaComponent implements OnInit {
-  @Input() ricerca!: number;
+  @Input() ricerca: number;
   @Input() acquisizione!:number;
   @Input() archivioAttuale = new Archivio(this.ar);
 

@@ -13,17 +13,9 @@ import { ArchivioService } from '../archivio.service';
   imports: [CommonModule],
 })
 export class AcquisizioneComponent implements OnInit {
-  @Input() ricerca!: number;
-  @Input() acquisizione!: number;
+  @Input() ricerca: number;
+  @Input() acquisizione: number;
   @Input() archivioAttuale = new Archivio(this.ar);
-
-  setAcquisizione(valore: number) {
-    this.acquisizione = valore;
-  }
-
-  setRicerca(valore: number) {
-    this.ricerca = valore;
-  }
   
   costruisciArchivio() {
     this.ar.getArchivio().subscribe({
@@ -52,7 +44,7 @@ export class AcquisizioneComponent implements OnInit {
       'undefined'
     );
     this.archivioAttuale.acquisisciLibro(nuovoLibro);
-    this.setAcquisizione(0);
+    //this.setAcquisizione(0);
   }
 
   constructor(private ar: ArchivioService) {}
