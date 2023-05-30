@@ -4,13 +4,15 @@ import { AjaxResponse } from 'rxjs/ajax';
 import { infolibro } from '../infolibro';
 import { Archivio } from '../archivio';
 import { ArchivioService } from '../archivio.service';
+import { RimozioneComponent } from './rimozione/rimozione.component';
+import { PrestitoComponent } from './prestito/prestito.component';
 
 @Component({
   selector: 'app-ricerca',
   templateUrl: './ricerca.component.html',
   styleUrls: ['./ricerca.component.css'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RimozioneComponent, PrestitoComponent],
 })
 export class RicercaComponent implements OnInit {
   @Input() ricerca: number;
