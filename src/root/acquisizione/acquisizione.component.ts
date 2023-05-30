@@ -15,11 +15,9 @@ import { ArchivioService } from '../archivio.service';
 export class AcquisizioneComponent implements OnInit {
   @Input() acquisizione!: number;
   @Input() archivioAttuale = new Archivio(this.ar);
-  @Output() resetAcquisizione = new EventEmitter<number>();
 
   setAcquisizione(valore: number) {
     this.acquisizione = valore;
-    this.resetAcquisizione.emit(this.acquisizione);
   }
 
   costruisciArchivio() {

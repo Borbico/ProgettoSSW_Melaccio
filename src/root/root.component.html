@@ -4,7 +4,10 @@
 <app-acquisizione
   [acquisizione]="acquisizione"
   [archivioAttuale]="archivioAttuale"
-  (resetAcquisizione)="setAcquisizione($event)"
 >
-</app-acquisizione>
-<app-ricerca></app-ricerca>
+</app-acquisizione><br />
+<app-ricerca
+  [ricerca]="ricerca"
+  [archivioAttuale]="archivioAttuale"
+>
+</app-ricerca>

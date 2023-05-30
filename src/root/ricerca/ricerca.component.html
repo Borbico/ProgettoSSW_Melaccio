@@ -8,6 +8,13 @@
   <h1>Cerca un volume in archivio</h1><br />
   <h2>Digita autore e/o titolo</h2><br />
   <label for="ricerca">Digita qui: </label>
-    <input type="text" id="ricerca" (input)="ricerca()" /><br />
+  <input type="text" id="ricerca" (input)="eseguiRicerca()" /><br />
+  <div *ngIf="libroSelezionato">
+    <app-visualizzazione
+      [ricerca]="ricerca"
+      [libroSelezionato]="libroSelezionato"
+      [archivioAttuale]="archivioAttuale"
+    ></app-visualizzazione>
+  </div>
   <button (click)="setRicerca(0)">Esci</button>
 </div>
