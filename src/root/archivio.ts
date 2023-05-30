@@ -9,9 +9,9 @@ export class Archivio {
     this.ar = ar;
     this.ar.getArchivio().subscribe({
       next: (x: AjaxResponse<any>) => (this.archivio = JSON.parse(x.response)),
-      error: (err) =>
+      error: (e) =>
         console.error(
-          "Errore di acquisizione dell'archivio: " + JSON.stringify(err)
+          "Errore di acquisizione dell'archivio: " + JSON.stringify(e)
         ),
     });
   }
