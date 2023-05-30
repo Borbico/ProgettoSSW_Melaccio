@@ -13,6 +13,7 @@ import { ArchivioService } from '../archivio.service';
   imports: [CommonModule],
 })
 export class AcquisizioneComponent implements OnInit {
+  @Input() ricerca!: number;
   @Input() acquisizione!: number;
   @Input() archivioAttuale = new Archivio(this.ar);
 
@@ -20,6 +21,10 @@ export class AcquisizioneComponent implements OnInit {
     this.acquisizione = valore;
   }
 
+  setRicerca(valore: number) {
+    this.ricerca = valore;
+  }
+  
   costruisciArchivio() {
     this.ar.getArchivio().subscribe({
       next: (data: AjaxResponse<any>) => console.log(data.response),

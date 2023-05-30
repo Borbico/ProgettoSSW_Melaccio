@@ -14,10 +14,15 @@ import { ArchivioService } from '../archivio.service';
 })
 export class RicercaComponent implements OnInit {
   @Input() ricerca!: number;
+  @Input() acquisizione!:number;
   @Input() archivioAttuale = new Archivio(this.ar);
 
   setRicerca(valore: number) {
     this.ricerca = valore;
+  }
+
+  setAcquisizione(valore: number) {
+    this.acquisizione = valore;
   }
 
   costruisciArchivio() {
@@ -33,6 +38,11 @@ export class RicercaComponent implements OnInit {
   libroSelezionato!: infolibro;
   trovati: number = 0;
 
+  titolo!: string;
+  autore!: string;
+  posizione!: string;
+  prestatario!:string;
+
   eseguiRicerca() {
     let libri = this.archivioAttuale.archivio;
     let nodoRicerca: HTMLInputElement = document.getElementById(
@@ -43,9 +53,12 @@ export class RicercaComponent implements OnInit {
       (libro.titolo + libro.autore).toLowerCase().includes(stringa)
     );
     if (libriTrovati.length === 1) {
-      this.setRicerca(3);
       this.trovati = 1;
       this.libroSelezionato = libriTrovati[0];
+      this.titolo = this.libroSelezionato.titolo;
+      this.autore = this.libroSelezionato.autore;
+      this.posizione = this.libroSelezionato.posizione;
+      this.prestatario = this.libroSelezionato.prestatario;
     } else {
       this.trovati = libriTrovati.length;
     }
