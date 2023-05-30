@@ -18,10 +18,15 @@ import { infolibro } from './infolibro';
   
 export class RootComponent implements OnInit {
   acquisizione: number = 0;
+  ricerca: number = 0;
   archivioAttuale = new Archivio(this.ar);
 
   setAcquisizione(valore: number) {
     this.acquisizione = valore;
+  }
+
+  setRicerca(valore: number) {
+    this.ricerca = valore;
   }
 
   costruisciArchivio() {
