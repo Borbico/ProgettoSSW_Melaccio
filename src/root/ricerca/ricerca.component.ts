@@ -21,10 +21,6 @@ export class RicercaComponent implements OnInit {
     this.ricerca = valore;
   }
 
-  setAcquisizione(valore: number) {
-    this.acquisizione = valore;
-  }
-
   costruisciArchivio() {
     this.ar.getArchivio().subscribe({
       next: (data: AjaxResponse<any>) => console.log(data.response),

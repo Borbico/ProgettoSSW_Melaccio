@@ -16,8 +16,7 @@ export class AcquisizioneComponent implements OnInit {
   @Input() ricerca: number;
   @Input() acquisizione: number;
   @Input() archivioAttuale = new Archivio(this.ar);
-  
-  
+
   costruisciArchivio() {
     this.ar.getArchivio().subscribe({
       next: (data: AjaxResponse<any>) => console.log(data.response),
@@ -30,10 +29,6 @@ export class AcquisizioneComponent implements OnInit {
 
   setAcquisizione(valore: number) {
     this.acquisizione = valore;
-  }
-
-  setRicerca(valore: number) {
-    this.ricerca = valore;
   }
 
   acquisisciLibro() {
@@ -53,7 +48,7 @@ export class AcquisizioneComponent implements OnInit {
       'undefined'
     );
     this.archivioAttuale.acquisisciLibro(nuovoLibro);
-    //this.setAcquisizione(0);
+    this.setAcquisizione(0);
   }
 
   constructor(private ar: ArchivioService) {}

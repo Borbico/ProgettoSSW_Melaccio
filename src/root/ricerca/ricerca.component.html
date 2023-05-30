@@ -1,6 +1,6 @@
 <button
   *ngIf="ricerca == 0"
-  (click)="setRicerca(1); setAcquisizione(0); costruisciArchivio()"
+  (click)="setRicerca(1); costruisciArchivio()"
 >
   Fai una ricerca
 </button>
@@ -8,12 +8,15 @@
   <h1>Cerca un volume in archivio</h1>
   <h2>Digita autore e/o titolo</h2>
   <label for="ricerca">Digita qui: </label>
-  <input type="text" id="ricerca" (input)="eseguiRicerca()" /><br />
+  <input type="text" id="ricerca" (input)="eseguiRicerca()" (change)="eseguiRicerca()" /><br />
   <div *ngIf="libroSelezionato">
     <h3>Volume trovato</h3>
     <div>Titolo: {{titolo}}</div>
     <div>Autore: {{autore}}</div>
     <div>Posizione: {{posizione}}</div>
+  </div>
+  <div *ngIf="trovati > 1">
+    <p>Ci sono {{trovati}} risultati corrispondenti.</p>
   </div>
   <button (click)="setRicerca(0)">Esci</button>
 </div>
