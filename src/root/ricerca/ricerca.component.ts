@@ -29,7 +29,7 @@ export class RicercaComponent implements OnInit {
   }
 
   libroSelezionato: infolibro;
-  trovati: number = 0;
+  trovati: number;
 
   titolo: string;
   autore: string;
@@ -57,6 +57,11 @@ export class RicercaComponent implements OnInit {
     } else {
       this.trovati = libriTrovati.length;
     }
+  }
+
+  resetRicercaComponent() {
+    this.libroSelezionato = undefined;
+    this.trovati = 0;
   }
 
   constructor(private ar: ArchivioService) {}
