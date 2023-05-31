@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AjaxResponse } from 'rxjs/ajax';
 import { infolibro } from '../infolibro';
@@ -14,7 +14,7 @@ import { PrestitoComponent } from './prestito/prestito.component';
   standalone: true,
   imports: [CommonModule, RimozioneComponent, PrestitoComponent],
 })
-export class RicercaComponent implements OnInit {
+export class RicercaComponent implements OnInit, OnChanges {
   @Input() ricerca: number;
   @Input() archivioAttuale = new Archivio(this.ar);
 
@@ -67,4 +67,10 @@ export class RicercaComponent implements OnInit {
   constructor(private ar: ArchivioService) {}
 
   ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if ('ricerca' in changes && this.ricerca === 0) {
+      this.resetRicercaComponent();
+    }
+  }
 }
