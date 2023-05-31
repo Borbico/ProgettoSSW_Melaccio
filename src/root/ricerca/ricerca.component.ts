@@ -16,7 +16,7 @@ import { PrestitoComponent } from './prestito/prestito.component';
 })
 export class RicercaComponent implements OnInit {
   @Input() ricerca: number;
-  @Input() acquisizione!:number;
+  @Input() acquisizione: number;
   @Input() archivioAttuale = new Archivio(this.ar);
 
   setRicerca(valore: number) {
@@ -33,13 +33,13 @@ export class RicercaComponent implements OnInit {
     });
   }
 
-  libroSelezionato!: infolibro;
+  libroSelezionato: infolibro;
   trovati: number = 0;
 
-  titolo!: string;
-  autore!: string;
-  posizione!: string;
-  prestatario!:string;
+  titolo: string;
+  autore: string;
+  posizione: string;
+  prestatario:string;
 
   eseguiRicerca() {
     let libri = this.archivioAttuale.archivio;

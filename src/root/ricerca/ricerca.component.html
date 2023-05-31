@@ -15,10 +15,8 @@
     <div>Autore: {{autore}}</div>
     <div>Posizione: {{posizione}}</div>
     <app-prestito>
-
     </app-prestito>
-    <app-rimozione>
-      
+    <app-rimozione [libroSelezionato] = "libroSelezionato" [archivioAttuale] = "archivioAttuale">    
     </app-rimozione>
   </div>
   <div *ngIf="trovati > 1">

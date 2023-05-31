@@ -31,7 +31,7 @@ export class AcquisizioneComponent implements OnInit {
     this.acquisizione = valore;
   }
 
-  acquisisciLibro() {
+  acquisisciDati() {
     var titolo: HTMLInputElement = document.getElementById(
       'titolo'
     ) as HTMLInputElement;
