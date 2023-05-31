@@ -5,7 +5,6 @@ import { RicercaComponent } from './ricerca/ricerca.component';
 import { AcquisizioneComponent } from './acquisizione/acquisizione.component';
 import { Archivio } from './archivio';
 import { ArchivioService } from './archivio.service';
-import { infolibro } from './infolibro';
 
 
 @Component({
@@ -20,14 +19,6 @@ export class RootComponent implements OnInit {
   acquisizione: number = 0;
   ricerca: number = 0;
   archivioAttuale = new Archivio(this.ar);
-
-  setAcquisizione(valore: number) {
-    this.acquisizione = valore;
-  }
-
-  setRicerca(valore: number) {
-    this.ricerca = valore;
-  }
 
   costruisciArchivio() {
     this.ar.getArchivio().subscribe({

@@ -21,6 +21,8 @@ export class RicercaComponent implements OnInit {
 
   setRicerca(valore: number) {
     this.ricerca = valore;
+    this.trovati = 0;
+    this.libroSelezionato = undefined;
   }
 
   costruisciArchivio() {
@@ -42,6 +44,8 @@ export class RicercaComponent implements OnInit {
   prestatario:string;
 
   eseguiRicerca() {
+    this.libroSelezionato = undefined;
+    this.trovati = 0;
     let libri = this.archivioAttuale.archivio;
     let nodoRicerca: HTMLInputElement = document.getElementById(
       'ricerca'

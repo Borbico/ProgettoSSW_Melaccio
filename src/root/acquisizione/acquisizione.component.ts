@@ -49,6 +49,10 @@ export class AcquisizioneComponent implements OnInit {
     );
     this.archivioAttuale.acquisisciLibro(nuovoLibro);
     this.setAcquisizione(0);
+
+    titolo.value = '';
+    autore.value = '';
+    posizione.value = '';
   }
 
   constructor(private ar: ArchivioService) {}
