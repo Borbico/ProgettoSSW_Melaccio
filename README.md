@@ -1,5 +1,5 @@
 # ProgettoSSW_Melaccio
 
-Devo poter riutilizzare le funzioni setRicerca e setAcquisizione anche negli altri component perché le viste vengano aggiornate correttamente.
+Repository del progetto d'esame realizzato da Daniele Melaccio del corso di Sviluppo dei Servizi Web AA 22/23 del professore Augusto Ciuffoletti. Il progetto consiste nella realizzazione di una biblioteca virtuale.
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-4dejbh)
+[Edit on StackBlitz ⚡️](https://https://stackblitz.com/edit/stackblitz-starters-cd7vgw?file=README.md)
