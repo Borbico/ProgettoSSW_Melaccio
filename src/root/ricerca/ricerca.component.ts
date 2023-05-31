@@ -16,14 +16,7 @@ import { PrestitoComponent } from './prestito/prestito.component';
 })
 export class RicercaComponent implements OnInit {
   @Input() ricerca: number;
-  @Input() acquisizione: number;
   @Input() archivioAttuale = new Archivio(this.ar);
-
-  setRicerca(valore: number) {
-    this.ricerca = valore;
-    this.trovati = 0;
-    this.libroSelezionato = undefined;
-  }
 
   costruisciArchivio() {
     this.ar.getArchivio().subscribe({

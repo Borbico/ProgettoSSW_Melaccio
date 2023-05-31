@@ -13,7 +13,6 @@ import { ArchivioService } from '../archivio.service';
   imports: [CommonModule],
 })
 export class AcquisizioneComponent implements OnInit {
-  @Input() ricerca: number;
   @Input() acquisizione: number;
   @Input() archivioAttuale = new Archivio(this.ar);
 
@@ -25,10 +24,6 @@ export class AcquisizioneComponent implements OnInit {
           "Errore di acquisizione dell'archivio: " + JSON.stringify(e)
         ),
     });
-  }
-
-  setAcquisizione(valore: number) {
-    this.acquisizione = valore;
   }
 
   acquisisciDati() {
@@ -48,7 +43,6 @@ export class AcquisizioneComponent implements OnInit {
       'undefined'
     );
     this.archivioAttuale.acquisisciLibro(nuovoLibro);
-    this.setAcquisizione(0);
 
     titolo.value = '';
     autore.value = '';
