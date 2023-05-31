@@ -1,9 +1,3 @@
-<button
-  *ngIf="ricerca == 0 && acquisizione == 0"
-  (click)="setRicerca(1); costruisciArchivio()"
->
-  Fai una ricerca
-</button>
 <div *ngIf="ricerca == 1">
   <h1>Cerca un volume in archivio</h1>
   <h2>Digita autore e/o titolo</h2>

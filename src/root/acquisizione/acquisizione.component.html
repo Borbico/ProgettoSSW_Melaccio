@@ -1,9 +1,4 @@
-<button
-  *ngIf="acquisizione == 0 && ricerca == 0"
-  (click)="setAcquisizione(1); costruisciArchivio()"
->
-  Nuova acquisizione
-</button>
+
 <div *ngIf="acquisizione == 1">
   <h1>Acquisizione di un nuovo volume in archivio</h1>
   <div>
@@ -15,5 +10,4 @@
     <input type="text" id="posizione" /><br />
   </div>
   <button (click)="acquisisciDati()">Acquisisci libro</button><br />
-  <button (click)="setAcquisizione(0)">Esci</button>
 </div>

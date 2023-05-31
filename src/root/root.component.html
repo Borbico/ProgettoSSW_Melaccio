@@ -1,15 +1,28 @@
 <h1>
   {{ title }}
 </h1>
+<button
+  *ngIf="acquisizione === 0 && ricerca === 0"
+  (click)="setAcquisizione(1); costruisciArchivio()"
+>
+  Nuova acquisizione
+</button>
 <app-acquisizione
   [acquisizione]="acquisizione"
   [ricerca]="ricerca"
   [archivioAttuale]="archivioAttuale"
 >
 </app-acquisizione><br />
+<button
+  *ngIf="ricerca === 0 && acquisizione === 0"
+  (click)="setRicerca(1); costruisciArchivio()"
+>
+  Fai una ricerca
+</button>
 <app-ricerca
   [ricerca]="ricerca"
   [acquisizione]="acquisizione"
   [archivioAttuale]="archivioAttuale"
 >
 </app-ricerca>
+<button *ngIf="acquisizione === 1 || ricerca === 1" (click)="setAcquisizione(0); setRicerca(0)">Esci</button>
