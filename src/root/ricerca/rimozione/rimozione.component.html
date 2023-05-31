@@ -1,1 +1,4 @@
-<button (click)= eliminaLibro() *ngIf="libroSelezionato.prestatario == 'undefined'">Elimina il libro dall'archivio</button>
+<div *ngIf="libroSelezionato.prestatario == 'undefined'">
+  <h2>Elimina il libro dall'archivio</h2>
+  <button (click)= eliminaLibro()>Elimina</button>
+</div>
