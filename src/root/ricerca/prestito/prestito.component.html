@@ -1,0 +1,8 @@
+<div *ngIf = "libroSelezionato.prestatario == 'undefined'">
+  <h2>Assegna in prestito questo libro</h2>
+  <label for="prestatario">Nome del prestatario: </label>
+  <input type="text" id="prestatario" (keyup.enter) = "prestaLibro()"><br />
+</div>
+<div *ngIf = "libroSelezionato.prestatario != 'undefined'">
+  <button (click) = "restituisciLibro()">Restituisci il libro</button>
+</div>

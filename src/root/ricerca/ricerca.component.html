@@ -14,7 +14,7 @@
     <div>Titolo: {{titolo}}</div>
     <div>Autore: {{autore}}</div>
     <div>Posizione: {{posizione}}</div>
-    <app-prestito>
+    <app-prestito [libroSelezionato] = "libroSelezionato" [archivioAttuale] = "archivioAttuale">
     </app-prestito>
     <app-rimozione [libroSelezionato] = "libroSelezionato" [archivioAttuale] = "archivioAttuale">    
     </app-rimozione>
