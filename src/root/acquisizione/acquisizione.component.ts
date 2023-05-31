@@ -17,6 +17,8 @@ export class AcquisizioneComponent implements OnInit {
   @Input() acquisizione: number;
   @Input() archivioAttuale = new Archivio(this.ar);
 
+  @Output() chiudiBottone = new EventEmitter<number>;
+
   costruisciArchivio() {
     this.ar.getArchivio().subscribe({
       next: (data: AjaxResponse<any>) => console.log(data.response),
@@ -29,6 +31,7 @@ export class AcquisizioneComponent implements OnInit {
 
   setAcquisizione(valore: number) {
     this.acquisizione = valore;
+    this.chiudiBottone.emit(this.acquisizione);
   }
 
   acquisisciDati() {

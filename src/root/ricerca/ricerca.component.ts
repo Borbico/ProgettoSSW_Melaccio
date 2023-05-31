@@ -19,10 +19,13 @@ export class RicercaComponent implements OnInit {
   @Input() acquisizione: number;
   @Input() archivioAttuale = new Archivio(this.ar);
 
+  @Output() chiudiBottone = new EventEmitter<number>;
+
   setRicerca(valore: number) {
     this.ricerca = valore;
     this.trovati = 0;
     this.libroSelezionato = undefined;
+    this.chiudiBottone.emit(this.ricerca);
   }
 
   costruisciArchivio() {
