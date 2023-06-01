@@ -47,15 +47,17 @@ export class RicercaComponent implements OnInit, OnChanges {
     const libriTrovati = libri.filter((libro) =>
       (libro.titolo + libro.autore).toLowerCase().includes(stringa)
     );
-    if (libriTrovati.length === 1) {
-      this.trovati = 1;
-      this.libroSelezionato = libriTrovati[0];
-      this.titolo = this.libroSelezionato.titolo;
-      this.autore = this.libroSelezionato.autore;
-      this.posizione = this.libroSelezionato.posizione;
-      this.prestatario = this.libroSelezionato.prestatario;
-    } else {
-      this.trovati = libriTrovati.length;
+    if (stringa !== ''){
+      if (libriTrovati.length === 1) {
+        this.trovati = 1;
+        this.libroSelezionato = libriTrovati[0];
+        this.titolo = this.libroSelezionato.titolo;
+        this.autore = this.libroSelezionato.autore;
+        this.posizione = this.libroSelezionato.posizione;
+        this.prestatario = this.libroSelezionato.prestatario;
+      } else {
+        this.trovati = libriTrovati.length;
+      }
     }
   }
 
